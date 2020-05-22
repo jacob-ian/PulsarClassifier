@@ -1,4 +1,4 @@
-package classifier;
+package com.jacobianmatthews.pulsarclassifier;
 
 /**
  * This file is a part of PulsarClassifier.
