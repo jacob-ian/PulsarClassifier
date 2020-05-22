@@ -22,11 +22,11 @@ import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.ClassifierBuilder {
 
     // CONSTRUCTORS
-    public ClassifierBuilder(final BasicLogger l, final String n) {
+    public ClassifierBuilder(BasicLogger l, String n) {
         super(l, n);
     }
 
-    public ClassifierBuilder(final String n) {
+    public ClassifierBuilder(String n) {
         super(n);
     }
 
@@ -37,10 +37,10 @@ public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.Cl
      *                  integers for individual algorithms.
      * @return true if all classifiers have been successfully tested and trained.
      */
-    public boolean build(final int algorithm, final String trainingSetPath, final String modelPath) {
+    public boolean build(int algorithm, String trainingSetPath, String modelPath) {
 
         // Create array of classifier integers
-        final int[] classifiers = { Classifiers.J48, Classifiers.MLP, Classifiers.NB, Classifiers.SVM };
+        int[] classifiers = { Classifiers.J48, Classifiers.MLP, Classifiers.NB, Classifiers.SVM };
 
         // Determine the algorithm integer
         switch (algorithm) {
@@ -87,8 +87,15 @@ public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.Cl
         }
 
     }
-
-    private boolean buildClassifier(final int algorithm, final String trainingSetPath, final String modelPath) {
+    /**
+     * This method will call the trainAndTest method on the algorithm/classifier desired.
+     * 
+     * @param algorithm integer corresponding to the classifier algorithm
+     * @param trainingSetPath String corresponding to the filepath of the training data set
+     * @param modelPath String corresponding to the directory of the classifier models to be outputted
+     * @return true if the selected classifier to be built is built successfully
+     */
+    private boolean buildClassifier(int algorithm, String trainingSetPath, String modelPath) {
         switch (algorithm) {
             case Classifiers.J48:
                 return trainAndTest(new J48Tester(log, "J48Tester"), trainingSetPath,
@@ -107,7 +114,15 @@ public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.Cl
         }
     }
 
-    private String setModelPath(final int algorithm, final String modelPath) {
+    /**
+     * This method converts a directory modelPath of which to output the classifier models, into individual
+     * model filepaths for each classifier.
+     * 
+     * @param algorithm an integer relating to the classifier algorithm
+     * @param modelPath String containing the directory to place the classifier models
+     * @return String with the path to the model of each classifier.
+     */
+    private String setModelPath(int algorithm, String modelPath) {
         // Get the name of the classifier
         final String classifierName = Classifiers.getClassifierName(algorithm);
 
