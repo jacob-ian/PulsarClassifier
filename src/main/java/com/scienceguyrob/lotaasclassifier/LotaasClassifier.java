@@ -142,13 +142,13 @@ public class LotaasClassifier
             log.sout("Attempting to build a new classifier", true);
             ClassifierBuilder cb = new ClassifierBuilder(log,"ClassifierBuilder");
 
-            // Actually build the classification system
+            // Actually build the ensemble classification system
             boolean result = cb.build(algorithm,training_path,model_path);
 
             if(result)
-                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier built successfully", true);
+                log.sout("Ensemble classifier built successfully", true);
             else
-                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier construction unsuccessful", true);
+                log.sout("Ensemble classifier construction unsuccessful", true);
         }
         else if(predict)
         {
