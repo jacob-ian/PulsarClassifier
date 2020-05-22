@@ -90,7 +90,7 @@ public class ClassifierBuilder extends Base
      * @param classifier the classifier to train and test.
      * @return true if trained and tested successfully, else false.
      */
-    private boolean trainAndTest(I_WekaTest classifier,String trainingSetPath,String modelPath)
+    public boolean trainAndTest(I_WekaTest classifier,String trainingSetPath,String modelPath)
     {
         //Common.fileDelete(this.outputFile);
         boolean trained=classifier.train(trainingSetPath);

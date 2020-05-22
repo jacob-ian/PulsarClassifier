@@ -27,11 +27,10 @@ import com.scienceguyrob.lotaasclassifier.classifiers.Classifiers;
 import com.scienceguyrob.lotaasclassifier.cli.CLI;
 import com.scienceguyrob.lotaasclassifier.cli.CLParameter;
 import com.scienceguyrob.lotaasclassifier.cli.ICLI;
-import com.scienceguyrob.lotaasclassifier.mvc.ClassPredictor;
-import com.scienceguyrob.lotaasclassifier.mvc.ClassifierBuilder;
-import com.scienceguyrob.lotaasclassifier.mvc.ClassifierValidator;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.utils.Common;
+
+import com.jacobianmatthews.pulsarclassifier.ClassifierBuilder;
 
 import java.net.URL;
 
