@@ -1,0 +1,10 @@
+INFO,25/05/2020,4:0:37.389,1590350437389,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,4:0:37.400,1590350437400,Unable to train classifier model/make predictions - inputs invalid
+INFO,25/05/2020,4:0:37.401,1590350437401,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,25/05/2020,4:0:55.704,1590350455704,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,4:0:55.715,1590350455716,Algorithm value supplied via -a flag invalid (must be 1 to 5).
+INFO,25/05/2020,4:0:55.716,1590350455716,Unable to train classifier model/make predictions - inputs invalid
+INFO,25/05/2020,4:0:55.717,1590350455717,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,25/05/2020,4:2:1.240,1590350521240,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,4:2:1.250,1590350521250,Unable to train classifier model/make predictions - inputs invalid
+INFO,25/05/2020,4:2:1.251,1590350521251,Exiting PULSAR CLASSIFIER 1.0 correctly
