@@ -256,11 +256,11 @@ public class PulsarClassifier {
         // Check the algorithm supplied is valid, if not return since there's
         // no point checking the other variables.
         if (cli.hasParameter(FLAG_ALGORITHM))
-            if (cli.getParameter(FLAG_ALGORITHM).toInt() > 0 && cli.getParameter(FLAG_ALGORITHM).toInt() < 6)
+            if (cli.getParameter(FLAG_ALGORITHM).toInt() > -2 && cli.getParameter(FLAG_ALGORITHM).toInt() < 6)
                 algorithm = cli.getParameter(FLAG_ALGORITHM).toInt();
             else
             {
-                log.sout("Algorithm value supplied via -a flag invalid (must be 1 to 5).", true);
+                log.sout("Algorithm value supplied via -a flag invalid (must be -1 to 5).", true);
                 return;
             }
 
