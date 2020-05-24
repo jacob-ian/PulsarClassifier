@@ -1,6 +1,5 @@
 package com.jacobianmatthews.pulsarclassifier.utils;
 
-import com.scienceguyrob.lotaasclassifier.classifiers.Classifiers;
 import com.scienceguyrob.lotaasclassifier.utils.Common;
 
 /**

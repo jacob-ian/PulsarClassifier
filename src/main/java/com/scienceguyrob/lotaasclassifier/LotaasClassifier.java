@@ -27,10 +27,11 @@ import com.scienceguyrob.lotaasclassifier.classifiers.Classifiers;
 import com.scienceguyrob.lotaasclassifier.cli.CLI;
 import com.scienceguyrob.lotaasclassifier.cli.CLParameter;
 import com.scienceguyrob.lotaasclassifier.cli.ICLI;
+import com.scienceguyrob.lotaasclassifier.mvc.ClassPredictor;
+import com.scienceguyrob.lotaasclassifier.mvc.ClassifierBuilder;
+import com.scienceguyrob.lotaasclassifier.mvc.ClassifierValidator;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.utils.Common;
-
-import com.jacobianmatthews.pulsarclassifier.ClassifierBuilder;
 
 import java.net.URL;
 
@@ -142,13 +143,13 @@ public class LotaasClassifier
             log.sout("Attempting to build a new classifier", true);
             ClassifierBuilder cb = new ClassifierBuilder(log,"ClassifierBuilder");
 
-            // Actually build the ensemble classification system
+            // Actually build the classification system
             boolean result = cb.build(algorithm,training_path,model_path);
 
             if(result)
-                log.sout("Ensemble classifier built successfully", true);
+                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier built successfully", true);
             else
-                log.sout("Ensemble classifier construction unsuccessful", true);
+                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier construction unsuccessful", true);
         }
         else if(predict)
         {

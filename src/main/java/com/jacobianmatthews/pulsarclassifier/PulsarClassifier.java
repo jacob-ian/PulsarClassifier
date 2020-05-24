@@ -7,10 +7,6 @@ import com.scienceguyrob.lotaasclassifier.cli.ICLI;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.utils.Common;
 
-import com.jacobianmatthews.pulsarclassifier.ClassifierBuilder;
-import com.jacobianmatthews.pulsarclassifier.ClassifierValidator;
-import com.jacobianmatthews.pulsarclassifier.ClassPredictor;
-
 import java.net.URL;
 
 
