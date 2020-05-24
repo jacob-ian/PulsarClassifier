@@ -16,7 +16,7 @@ import java.net.URL;
  * 
  * It is a derivative of the com.scienceguyrob.lotaasclassifier package.
  *
- * @author Rob Lyon & Jacob Ian Matthews
+ * @author Jacob Ian Matthews & Rob Lyon
  *
  * @version 1.0, 22/5/2020
  */
@@ -141,10 +141,28 @@ public class PulsarClassifier {
             // Actually build the classification system
             boolean result = cp.predict(algorithm,predict_path,model_path);
 
-            if(result)
-                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier made predictions successfully", true);
-            else
-                log.sout(Classifiers.getClassifierName(algorithm)+ " classifier unsuccessful in applying predictions", true);
+            // Log the results back to the user
+            if ( algorithm == -1 )
+            {
+                if ( result )
+                {
+                    log.sout("Ensemble classifier made predictions successfully.", true);
+                } else {
+                    log.sout("Ensemble classifier was unsuccessful in applying predictions.", true);
+                }
+            } else {
+
+                if( result )
+                {
+                    log.sout(Classifiers.getClassifierName(algorithm)+ " classifier made predictions successfully", true);
+
+                } else {
+                    log.sout(Classifiers.getClassifierName(algorithm)+ " classifier unsuccessful in applying predictions", true);
+                }
+
+            }
+
+            
         }
         else if(validate)
         {
@@ -381,19 +399,21 @@ public class PulsarClassifier {
         String details = "\n";
         details += "**************************************************************************\n";
         details += "|                                                                        |\n";
-        details += "|                          LOTAAS CLASSIFIER 1.0                         |\n";
+        details += "|                          PULSAR CLASSIFIER v1.0                        |\n";
         details += "|                                                                        |\n";
         details += "**************************************************************************\n";
         details += "| Description:                                                           |\n";
         details += "|                                                                        |\n";
-        details += "| Machine learning classification system. Can be used to build a classi- |\n";
-        details += "| fication model, or to label new observational data using a existing    |\n";
-        details += "| model. This tool requires Java 1.6 or later to run.                    |\n";
+        details += "| A machine learning pulsar classification program derived from Rob.     |\n";
+        details += "| Lyon's LOTAASClassifier v1.0. Can be used in ensemble classification   |\n";
+        details += "| or individual classification modes. This software can create           |\n";
+        details += "| classification models and make predictions on data using those models. |\n";
+        details += "| Requires Java 1.6 or later to run.                                     |\n";
         details += "|                                                                        |\n";
         details += "**************************************************************************\n";
-        details += "| Author: Rob Lyon                                                       |\n";
-        details += "| Email : robert.lyon@manchester.ac.uk                                   |\n";
-        details += "| web   : www.scienceguyrob.com                                          |\n";
+        details += "| Author: Jacob Ian Matthews & Rob Lyon                                  |\n";
+        details += "| Email : jacob@jacobian.com.au                                          |\n";
+        details += "| web   : jacobianmatthews.com                                           |\n";
         details += "**************************************************************************\n";
         details += "| Required Command Line Arguments:                                       |\n";
         details += "|                                                                        |\n";
@@ -403,11 +423,12 @@ public class PulsarClassifier {
         details += "|             This is used to train the machine learning classifier that |\n";
         details += "|             assigns predicted candidate labels.                        |\n";
         details += "|                                                                        |\n";
-        details += "| -m (path) output path for the created model (a file path to create).   |\n";
+        details += "| -m (path) output directory for the created model.                      |\n";
         details += "|                                                                        |\n";
         details += "| -a (int) the learning algorithm to build a model for. There are some   |\n";
         details += "|          possible choices listed below:                                |\n";
         details += "|                                                                        |\n";
+        details += "|         -1 = Ensemble Classifier (builds all algorithms)               |\n";
         details += "|          1 = J48 decision tree                                         |\n";
         details += "|          2 = Multilayer perceptron (neural network)                    |\n";
         details += "|          3 = Naive Bayes                                               |\n";
@@ -415,9 +436,9 @@ public class PulsarClassifier {
         details += "|                                                                        |\n";
         details += "| Prediction mode (applies the classifier to new data):                  |\n";
         details += "|                                                                        |\n";
-        details += "| -m (path) path to the model file, describing the pre-built classifier  |\n";
-        details += "|           to use. The model file can have any extension, but must have |\n";
-        details += "|           been built using this tool or WEKA.                          |\n";
+        details += "| -m (path) path to the models directory, describing the pre-built       |\n";
+        details += "|           classifier to use. The model must have been built using      |\n";
+        details += "|           this tool or WEKA.                                           |\n";
         details += "|                                                                        |\n";
         details += "| -p (string) path to a file containing unlabelled data in ARFF format.  |\n";
         details += "|             The model loaded in via the -m flag will apply predicted   |\n";
@@ -426,6 +447,7 @@ public class PulsarClassifier {
         details += "| -a (int) the learning algorithm stored in the model.                   |\n";
         details += "|          possible choices listed below:                                |\n";
         details += "|                                                                        |\n";
+        details += "|         -1 = Ensemble Classifier                                       |\n";
         details += "|          1 = J48 decision tree                                         |\n";
         details += "|          2 = Multilayer perceptron (neural network)                    |\n";
         details += "|          3 = Naive Bayes                                               |\n";
@@ -433,9 +455,9 @@ public class PulsarClassifier {
         details += "|                                                                        |\n";
         details += "| Validation mode (checks a new classifier model):                       |\n";
         details += "|                                                                        |\n";
-        details += "| -m (path) path to the model file, describing the pre-built classifier  |\n";
-        details += "|           to use. The model file can have any extension, but must have |\n";
-        details += "|           been built using this tool or WEKA.                          |\n";
+        details += "| -m (path) path to the models directory, describing the pre-built       |\n";
+        details += "|           classifier to use. The models must have been built using     |\n";
+        details += "|           this tool or WEKA.                                           |\n";
         details += "|                                                                        |\n";
         details += "| -v        (string) path to a file containing labelled data in ARFF     |\n";
         details += "|             format. The model loaded in via the -m flag will then be   |\n";
@@ -444,6 +466,7 @@ public class PulsarClassifier {
         details += "| -a (int) the learning algorithm stored in the model.                   |\n";
         details += "|          possible choices listed below:                                |\n";
         details += "|                                                                        |\n";
+        details += "|         -1 = Ensemble Classifier                                       |\n";
         details += "|          1 = J48 decision tree                                         |\n";
         details += "|          2 = Multilayer perceptron (neural network)                    |\n";
         details += "|          3 = Naive Bayes                                               |\n";
@@ -458,10 +481,10 @@ public class PulsarClassifier {
         details += "|                                                                        |\n";
         details += "| EXAMPLE USAGE:                                                         |\n";
         details += "|                                                                        |\n";
-        details += "| java -jar LotaasClassifier.jar -a 1 -t /my/file.arff -p /my/output.m   |\n";
+        details += "| java -jar LotaasClassifier.jar -a -1 -t /my/file.arff -m /my/models/   |\n";
         details += "|                                                                        |\n";
-        details += "| This would build a bayesian classifier using the supplied training set |\n";
-        details += "| with the 'learned' model written to output.m.                          |\n";
+        details += "| This would build an ensemble classifier using the supplied training    |\n";
+        details += "| set with the 'learned' models written to /models/                      |\n";
         details += "|                                                                        |\n";
         details += "**************************************************************************\n";
         details += "| License:                                                               |\n";
@@ -484,7 +507,7 @@ public class PulsarClassifier {
         log.setVerbose(true);
 
         if(log != null)
-            log.sout("Welcome to LOTAAS CLASSIFIER 1.0",true);
+            log.sout("Welcome to PULSAR CLASSIFIER 1.0",true);
         else
         {
             System.out.println("Log file cannot be initialised, exiting...");
@@ -498,7 +521,7 @@ public class PulsarClassifier {
     private static void safeExit()
     {
         log.setVerbose(true);
-        log.sout("Exiting LOTAAS CLASSIFIER 1.0 correctly",true);
+        log.sout("Exiting PULSAR CLASSIFIER 1.0 correctly",true);
         System.exit(0);
     }
 

@@ -1,10 +1,7 @@
 package com.jacobianmatthews.pulsarclassifier;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
 import com.jacobianmatthews.pulsarclassifier.utils.Classification;
 import com.jacobianmatthews.pulsarclassifier.utils.ClassificationList;
 import com.jacobianmatthews.pulsarclassifier.utils.Classifiers;
@@ -13,7 +10,6 @@ import com.scienceguyrob.lotaasclassifier.classifiers.offline.J48Tester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.MLPTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.NaiveBayesTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.SVMTester;
-import com.scienceguyrob.lotaasclassifier.io.Reader;
 import com.scienceguyrob.lotaasclassifier.io.Writer;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.wekawrappers.I_WekaTest;
@@ -160,7 +156,7 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                     // Return true to denote that it worked
                     return true;
                 } else {
-                    
+
                     return false;
                 }
 
