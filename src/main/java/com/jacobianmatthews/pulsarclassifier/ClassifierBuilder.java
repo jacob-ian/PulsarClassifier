@@ -1,6 +1,7 @@
 package com.jacobianmatthews.pulsarclassifier;
 
-import com.scienceguyrob.lotaasclassifier.classifiers.Classifiers;
+import com.jacobianmatthews.pulsarclassifier.utils.Models;
+import com.jacobianmatthews.pulsarclassifier.utils.Classifiers;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.J48Tester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.MLPTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.NaiveBayesTester;
@@ -10,7 +11,8 @@ import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 
 /**
  * This file is intended to build a Classification Model in four different Machine Learning algorithms
- * from a training data set provided by the user.
+ * from a training data set provided by the user. It can be completed in ensemble (all classifiers) by using
+ * algorithm=-1, or individually by using their respective integers.
  * 
  * @author Jacob Ian Matthews
  * Contact: jacob@jacobian.com.au
@@ -39,52 +41,39 @@ public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.Cl
      */
     public boolean build(int algorithm, String trainingSetPath, String modelPath) {
 
-        // Create array of classifier integers
-        int[] classifiers = { Classifiers.J48, Classifiers.MLP, Classifiers.NB, Classifiers.SVM };
+        // Check if user requested the ensemble classifier
+        if (algorithm == -1) {
 
-        // Determine the algorithm integer
-        switch (algorithm) {
-            // Case for the ensemble classifier
-            case -1:
-                // Create success count variable
-                int successCount = 0;
+            // Create success count variable
+            int successCount = 0;
 
-                // All algorithms selected therefore loop through training and testing them all
-                for (final int classifier : classifiers) {
-                    // Check if the result of building the selected classifier returns true
-                    if (buildClassifier(classifier, trainingSetPath, modelPath)) {
-                        // Add to the successCount as it was successful
-                        successCount++;
-                    }
+            // All algorithms selected therefore loop through training and testing them all
+            for (int classifier : Classifiers.classifiers) {
+                // Check if the result of building the selected classifier returns true
+                if (buildClassifier(classifier, trainingSetPath, modelPath)) {
+                    // Add to the successCount as it was successful
+                    successCount++;
                 }
+            }
 
-                // Check to see if all classifiers have built successfully
-                if (successCount == classifiers.length) {
-                    // All classifiers have been built successfully, therefore return true
-                    return true;
-                } else {
+            // Check to see if all classifiers have built successfully
+            if (successCount == Classifiers.classifiers.length) {
+                // All classifiers have been built successfully, therefore return true
+                return true;
 
-                    // Not all classifiers were successful, therefore return false
-                    return false;
-                }
+            } else {
 
-                // Cases for the individual classifiers
-            case Classifiers.J48:
-                return trainAndTest(new J48Tester(log, "J48Tester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
-            case Classifiers.MLP:
-                return trainAndTest(new MLPTester(log, "MLPTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
-            case Classifiers.NB:
-                return trainAndTest(new NaiveBayesTester(log, "NaiveBayesTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
-            case Classifiers.SVM:
-                return trainAndTest(new SVMTester(log, "SVMTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
-            default:
+                // Not all classifiers were successful, therefore return false
                 return false;
+            }
+
+        } else {
+
+            // Not using the ensemble classifier, build the individual classifier and return the result
+            return buildClassifier(algorithm, trainingSetPath, modelPath);
 
         }
+        
 
     }
     /**
@@ -95,49 +84,23 @@ public class ClassifierBuilder extends com.scienceguyrob.lotaasclassifier.mvc.Cl
      * @param modelPath String corresponding to the directory of the classifier models to be outputted
      * @return true if the selected classifier to be built is built successfully
      */
-    private boolean buildClassifier(int algorithm, String trainingSetPath, String modelPath) {
+    private boolean buildClassifier(int algorithm, String trainingSetPath, String modelDir) {
         switch (algorithm) {
             case Classifiers.J48:
                 return trainAndTest(new J48Tester(log, "J48Tester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
+                        Models.getModelFilePath(algorithm, modelDir));
             case Classifiers.MLP:
                 return trainAndTest(new MLPTester(log, "MLPTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
+                        Models.getModelFilePath(algorithm, modelDir));
             case Classifiers.NB:
                 return trainAndTest(new NaiveBayesTester(log, "NaiveBayesTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
+                        Models.getModelFilePath(algorithm, modelDir));
             case Classifiers.SVM:
                 return trainAndTest(new SVMTester(log, "SVMTester"), trainingSetPath,
-                        setModelPath(algorithm, modelPath));
+                        Models.getModelFilePath(algorithm, modelDir));
             default:
                 return false;
         }
-    }
-
-    /**
-     * This method converts a directory modelPath of which to output the classifier models, into individual
-     * model filepaths for each classifier.
-     * 
-     * @param algorithm an integer relating to the classifier algorithm
-     * @param modelPath String containing the directory to place the classifier models
-     * @return String with the path to the model of each classifier.
-     */
-    private String setModelPath(int algorithm, String modelPath) {
-        // Get the name of the classifier
-        final String classifierName = Classifiers.getClassifierName(algorithm);
-
-        // Create a model filename based on the classifier name
-        final String fileName = "model_" + classifierName;
-
-        // Check if modelPath ends in a forward slash
-        if(modelPath.endsWith("/")){
-            // Return the path to the model for the chosen algorithm
-            return modelPath+fileName;
-        } else {
-            // Add a forward slash and return the model path
-            return modelPath+"/"+fileName;
-        }
-
     }
     
 }

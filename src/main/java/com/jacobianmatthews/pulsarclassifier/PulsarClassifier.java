@@ -1,6 +1,5 @@
 package com.jacobianmatthews.pulsarclassifier;
 
-import com.scienceguyrob.lotaasclassifier.LotaasClassifier;
 import com.scienceguyrob.lotaasclassifier.classifiers.Classifiers;
 import com.scienceguyrob.lotaasclassifier.cli.CLI;
 import com.scienceguyrob.lotaasclassifier.cli.CLParameter;
@@ -25,8 +24,7 @@ import java.net.URL;
  *
  * @version 1.0, 22/5/2020
  */
-public class PulsarClassifier extends LotaasClassifier
-{
+public class PulsarClassifier {
     /**
      *
      *	VARIABLES
