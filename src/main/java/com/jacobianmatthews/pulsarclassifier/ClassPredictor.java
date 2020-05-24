@@ -1,14 +1,20 @@
 package com.jacobianmatthews.pulsarclassifier;
 
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import com.jacobianmatthews.pulsarclassifier.utils.Classification;
+import com.jacobianmatthews.pulsarclassifier.utils.ClassificationList;
 import com.jacobianmatthews.pulsarclassifier.utils.Classifiers;
 import com.jacobianmatthews.pulsarclassifier.utils.Models;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.J48Tester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.MLPTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.NaiveBayesTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.SVMTester;
+import com.scienceguyrob.lotaasclassifier.io.Reader;
+import com.scienceguyrob.lotaasclassifier.io.Writer;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.wekawrappers.I_WekaTest;
 
@@ -31,11 +37,12 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
         // Check if the ensemble classifier is being used
         if ( algorithm == -1 )
         {
-            // Get the prefix of the prediction output files (input file name without extension)
+            // Get the prefix of the prediction output files (input file path without extension)
             String fileName = predictPath.substring(0, predictPath.lastIndexOf("."));
 
-            // Create an array of the [output].positive files
-            List<String> files = new ArrayList<String>();
+            // Create an array of the [output].positive and [output].negative files
+            List<String> positiveFiles = new ArrayList<String>();
+            List<String> negativeFiles = new ArrayList<String>();
 
             // Create an index to count the number of classifiers successfully completing predictions
             int predictCount = 0;
@@ -53,11 +60,12 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                 // Get the name of the classifier
                 String classifierName = Classifiers.getClassifierName(classifier);
 
-                // Re-create the positive output's file name
-                String outputName = fileName+"_"+classifierName+".positive";
+                // Re-create the output file's name
+                String outputName = fileName+"_"+classifierName;
 
                 // Add the output file's name to the array of file names
-                files.add(outputName);
+                positiveFiles.add(outputName+".positive");
+                negativeFiles.add(outputName+".negative");
 
             }
 
@@ -70,7 +78,92 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                 // indicates a more accurate classification.
 
                 // Create the ensemble classifier's output file names
-                
+                String ensemblePositive = fileName+"_ensemble.positive";
+                String ensembleNegative = fileName+"_ensemble.negative";
+
+                // Create some flags to denote the ensemble classification process completed successfully
+                boolean positiveSuccess = false;
+                boolean negativeSuccess = false;
+
+                // Create a list containing the postitive classifications and a count of their occurrences
+                ClassificationList positiveList = new ClassificationList();
+
+                // Build the list of positive classifications using the outputs from all the classifiers
+                if( positiveList.buildList(positiveFiles) ){
+
+                    // We now have a list of positive candidate classifications and we can apply
+                    // the cutoff of 3 separate positive classifications for the ensemble classifier.
+                    
+                    // Loop through the list of positive classifications
+                    for(Classification positive: positiveList.list)
+                    {
+                        // Check the classification key-value pair for a value >=3
+                        if( positive.getValue() >= 3 )
+                        {
+                            // Try add it to the ensemble positive output file
+                            if ( !Writer.append(ensemblePositive, positive.getKey()) )
+                            {
+                                log.sout("Couldn't add "+positive.getKey()+" to positive ensemble classifier output file.", true);
+                            }
+                        } else {
+
+                            // Add it to the negative output file as it didn't survive the cutoff
+                            if( !Writer.append(ensembleNegative, positive.getKey()) )
+                            {
+                                log.sout("Couldn't add "+positive.getKey()+" to negative ensemble classifier output file.", true);
+                            }
+                        }
+                        
+                    }
+                    // Flag that the process was successful
+                    positiveSuccess = true;
+ 
+                } else {
+
+                    // Return false and log the error
+                    log.sout("Ensemble classifier positive candidates list couldn't be compiled.", true);
+                    return false;
+                }
+
+                // Create a list of the negative classifications
+                ClassificationList negativeList = new ClassificationList();
+
+                // Build a list of negative classifications from all classifiers
+                if ( negativeList.buildList(negativeFiles) )
+                {
+                    // Loop through the list to produce the negative output file
+                    for (Classification negative: negativeList.list )
+                    {
+                        // Get the key of the classification
+                        String key = negative.getKey();
+
+                        // Append it to the output file
+                        if( !Writer.append(ensembleNegative, key) )
+                        {
+                            // Log the error 
+                            log.sout("Couldn't add "+key+" to the negative ensemble classifier output file.", true);
+
+                        }
+                    }
+
+                    // Flag that the process was successful
+                    negativeSuccess = true;
+
+                } else {
+                    // Log the error and return false
+                    log.sout("Ensemble classifier negative candidates list couldn't be compiled.", true);
+                }
+
+                // Check to see if both processes were successful
+                if( positiveSuccess && negativeSuccess )
+                {
+                    // Return true to denote that it worked
+                    return true;
+                } else {
+                    
+                    return false;
+                }
+
 
             } else {
 
@@ -108,19 +201,19 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
     private boolean makePredictions(I_WekaTest classifier, int algorithm, String predictPath, String modelPath)
     {
         // Get the Input Data's file name without the extension
-        String file = predictPath.substring(0, predictPath.lastIndexOf("."));
+        final String file = predictPath.substring(0, predictPath.lastIndexOf("."));
 
         // Get the name of the classifier
-        String classifierName = Classifiers.getClassifierName(algorithm);
+        final String classifierName = Classifiers.getClassifierName(algorithm);
 
         // Create the name of the Classifier's output file
-        String outputName = file+"_"+classifierName;
+        final String outputName = file+"_"+classifierName;
 
         // Check if the classifier's model loaded
-        boolean loaded = classifier.loadModel(modelPath);
+        final boolean loaded = classifier.loadModel(modelPath);
 
         // Check if the predictions were made
-        boolean predicted = classifier.predict(predictPath, outputName);
+        final boolean predicted = classifier.predict(predictPath, outputName);
 
         // Check the results of the booleans
         if(loaded & predicted)
