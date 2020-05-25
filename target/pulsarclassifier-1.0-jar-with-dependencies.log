@@ -1,0 +1,94 @@
+INFO,25/05/2020,13:2:16.141,1590382936141,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,13:2:16.150,1590382936150,Attempting to build a new classifier
+INFO,25/05/2020,13:2:16.159,1590382936159,Training a J48 classifier
+INFO,25/05/2020,13:2:16.160,1590382936160,Training a J48 classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:2:16.189,1590382936189,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:2:16.267,1590382936267,Training a J48 classifier completed in 106093214 (ns) or 0.106093214 (s)
+INFO,25/05/2020,13:2:16.293,1590382936293,Training a MLP classifier
+INFO,25/05/2020,13:2:16.294,1590382936294,Training a MLP classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:2:16.299,1590382936299,Training instances being used to train the classifier: 24
+ERROR,25/05/2020,13:2:16.300,1590382936300,Could not train a MLP classifier: Exception building model,weka.core.WekaException: weka.classifiers.functions.MultilayerPerceptron: Not enough training instances with class labels (required: 1, provided: 0)!
+INFO,25/05/2020,13:2:16.307,1590382936307,could not train classifier
+INFO,25/05/2020,13:2:16.312,1590382936312,Training a NaiveBayes classifier
+INFO,25/05/2020,13:2:16.312,1590382936313,Training a NaiveBayes classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:2:16.314,1590382936314,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:2:16.316,1590382936316,Training a NaiveBayes classifier completed in 3218525 (ns) or 0.003218525 (s)
+INFO,25/05/2020,13:2:16.328,1590382936328,Training a SVM classifier
+INFO,25/05/2020,13:2:16.328,1590382936328,Training a SVM classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:2:16.330,1590382936330,Training instances being used to train the classifier: 24
+ERROR,25/05/2020,13:2:16.331,1590382936331,Could not train a SVM classifier: Exception building model,weka.core.WekaException: weka.classifiers.functions.SMO: Not enough training instances with class labels (required: 1, provided: 0)!
+INFO,25/05/2020,13:2:16.336,1590382936336,could not train classifier
+INFO,25/05/2020,13:2:16.336,1590382936336,Classifier construction unsuccessful
+INFO,25/05/2020,13:2:16.337,1590382936337,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,25/05/2020,13:11:5.620,1590383465620,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,13:11:5.630,1590383465630,Attempting to build a new classifier
+INFO,25/05/2020,13:11:5.642,1590383465642,Training a J48 classifier
+INFO,25/05/2020,13:11:5.643,1590383465643,Training a J48 classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:11:5.665,1590383465665,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:5.750,1590383465750,Training a J48 classifier completed in 106272620 (ns) or 0.10627262 (s)
+INFO,25/05/2020,13:11:5.777,1590383465777,Training a MLP classifier
+INFO,25/05/2020,13:11:5.778,1590383465778,Training a MLP classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:11:5.783,1590383465783,Training instances being used to train the classifier: 24
+ERROR,25/05/2020,13:11:5.784,1590383465784,Could not train a MLP classifier: Exception building model,weka.core.WekaException: weka.classifiers.functions.MultilayerPerceptron: Not enough training instances with class labels (required: 1, provided: 0)!
+INFO,25/05/2020,13:11:5.789,1590383465789,could not train classifier
+INFO,25/05/2020,13:11:5.794,1590383465794,Training a NaiveBayes classifier
+INFO,25/05/2020,13:11:5.795,1590383465795,Training a NaiveBayes classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:11:5.797,1590383465798,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:5.800,1590383465800,Training a NaiveBayes classifier completed in 4949665 (ns) or 0.004949665 (s)
+INFO,25/05/2020,13:11:5.819,1590383465819,Training a SVM classifier
+INFO,25/05/2020,13:11:5.819,1590383465819,Training a SVM classifier on training data in: /home/jacob/pulsars/data/pfd/output.arff
+INFO,25/05/2020,13:11:5.821,1590383465821,Training instances being used to train the classifier: 24
+ERROR,25/05/2020,13:11:5.823,1590383465823,Could not train a SVM classifier: Exception building model,weka.core.WekaException: weka.classifiers.functions.SMO: Not enough training instances with class labels (required: 1, provided: 0)!
+INFO,25/05/2020,13:11:5.829,1590383465829,could not train classifier
+INFO,25/05/2020,13:11:5.829,1590383465829,Ensemble classifier couldn't be built.
+INFO,25/05/2020,13:11:5.830,1590383465830,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,25/05/2020,13:11:37.820,1590383497820,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,13:11:37.831,1590383497831,Attempting to build a new classifier
+INFO,25/05/2020,13:11:37.840,1590383497840,Training a J48 classifier
+INFO,25/05/2020,13:11:37.841,1590383497841,Training a J48 classifier on training data in: /home/jacob/pulsars/data/training.arff
+INFO,25/05/2020,13:11:37.863,1590383497863,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:37.950,1590383497950,Training a J48 classifier completed in 108105131 (ns) or 0.108105131 (s)
+INFO,25/05/2020,13:11:37.982,1590383497982,Training a MLP classifier
+INFO,25/05/2020,13:11:37.983,1590383497983,Training a MLP classifier on training data in: /home/jacob/pulsars/data/training.arff
+INFO,25/05/2020,13:11:37.986,1590383497987,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:38.80,1590383498080,Training a MLP classifier completed in 95866893 (ns) or 0.095866893 (s)
+INFO,25/05/2020,13:11:38.102,1590383498102,Training a NaiveBayes classifier
+INFO,25/05/2020,13:11:38.103,1590383498103,Training a NaiveBayes classifier on training data in: /home/jacob/pulsars/data/training.arff
+INFO,25/05/2020,13:11:38.105,1590383498105,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:38.108,1590383498108,Training a NaiveBayes classifier completed in 4671073 (ns) or 0.004671073 (s)
+INFO,25/05/2020,13:11:38.119,1590383498119,Training a SVM classifier
+INFO,25/05/2020,13:11:38.119,1590383498119,Training a SVM classifier on training data in: /home/jacob/pulsars/data/training.arff
+INFO,25/05/2020,13:11:38.122,1590383498122,Training instances being used to train the classifier: 24
+INFO,25/05/2020,13:11:38.141,1590383498141,Training a SVM classifier completed in 20702145 (ns) or 0.020702145 (s)
+INFO,25/05/2020,13:11:38.147,1590383498147,Ensemble classifier built successfully
+INFO,25/05/2020,13:11:38.148,1590383498148,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,25/05/2020,13:12:10.367,1590383530367,Welcome to PULSAR CLASSIFIER 1.0
+INFO,25/05/2020,13:12:10.376,1590383530376,Attempting to apply predictions using existing classifier
+INFO,25/05/2020,13:12:10.419,1590383530419,Attempting to classify data using the J48 classifier
+INFO,25/05/2020,13:12:10.434,1590383530434,The J48 classifier is ready.
+INFO,25/05/2020,13:12:10.435,1590383530435,The J48 classify will process all instances available.
+INFO,25/05/2020,13:12:10.435,1590383530435,Total examples to be classified: 24
+INFO,25/05/2020,13:12:10.436,1590383530436,The J48 model is classifying instance: 0
+INFO,25/05/2020,13:12:10.439,1590383530439,Classification using J48 completed in 3042597 (ns) or 0.003042597 (s)
+INFO,25/05/2020,13:12:10.440,1590383530440,Predicted positive: 11 predicted negative 13
+INFO,25/05/2020,13:12:10.478,1590383530478,Attempting to classify data using the MLP classifier
+INFO,25/05/2020,13:12:10.483,1590383530483,The MLP classifier is ready.
+INFO,25/05/2020,13:12:10.484,1590383530484,The MLP classify will process all instances available.
+INFO,25/05/2020,13:12:10.484,1590383530484,Total examples to be classified: 24
+INFO,25/05/2020,13:12:10.485,1590383530485,The MLP model is classifying instance: 0
+INFO,25/05/2020,13:12:10.491,1590383530491,Classification using MLP completed in 6461466 (ns) or 0.006461466 (s)
+INFO,25/05/2020,13:12:10.492,1590383530492,Predicted positive: 11 predicted negative 13
+INFO,25/05/2020,13:12:10.504,1590383530504,Attempting to classify data using the NaiveBayes classifier
+INFO,25/05/2020,13:12:10.507,1590383530507,The NaiveBayes classifier is ready.
+INFO,25/05/2020,13:12:10.508,1590383530508,The NaiveBayes classify will process all instances available.
+INFO,25/05/2020,13:12:10.508,1590383530508,Total examples to be classified: 24
+INFO,25/05/2020,13:12:10.509,1590383530509,The NaiveBayes model is classifying instance: 0
+INFO,25/05/2020,13:12:10.516,1590383530516,Classification using NaiveBayes completed in 7828641 (ns) or 0.007828641 (s)
+INFO,25/05/2020,13:12:10.517,1590383530517,Predicted positive: 10 predicted negative 14
+INFO,25/05/2020,13:12:10.537,1590383530537,Attempting to classify data using the SVM classifier
+INFO,25/05/2020,13:12:10.539,1590383530539,The SVM classifier is ready.
+INFO,25/05/2020,13:12:10.540,1590383530540,The SVM classify will process all instances available.
+INFO,25/05/2020,13:12:10.541,1590383530541,Total examples to be classified: 24
+INFO,25/05/2020,13:12:10.541,1590383530541,The SVM model is classifying instance: 0
+INFO,25/05/2020,13:12:10.546,1590383530546,Classification using SVM completed in 4713878 (ns) or 0.004713878 (s)
+INFO,25/05/2020,13:12:10.546,1590383530546,Predicted positive: 10 predicted negative 14

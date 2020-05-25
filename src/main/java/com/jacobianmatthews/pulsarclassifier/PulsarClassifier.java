@@ -118,19 +118,28 @@ public class PulsarClassifier {
             // Actually build the ensemble classification system
             boolean result = cb.build(algorithm,training_path,model_path);
 
-            if(algorithm == -1 && result){
+            // Check the results of the classifier build
+            if( algorithm == -1 )
+            {
+                if (result)
+                {
+                    log.sout("Ensemble classifier built successfully", true);
 
-                log.sout("Ensemble classifier built successfully", true);
-            
-            } else if (algorithm != -1 && result){
-                
-                log.sout(Classifiers.getClassifierName(algorithm)+" classifier built successfully", true);
-            
-            } else if(!result){
-                
-                log.sout("Classifier construction unsuccessful", true);
+                } else {
 
+                    log.sout("Ensemble classifier couldn't be built.", true);
+                }
+
+            } else {
+                if (result)
+                {
+                    log.sout(Classifiers.getClassifierName(algorithm)+" classifier built successfully", true);
+
+                } else {
+                    log.sout(Classifiers.getClassifierName(algorithm)+" classifier couldn't be built.", true);
+                }
             }
+
         }
         else if(predict)
         {

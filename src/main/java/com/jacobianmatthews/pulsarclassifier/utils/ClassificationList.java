@@ -1,5 +1,6 @@
 package com.jacobianmatthews.pulsarclassifier.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.scienceguyrob.lotaasclassifier.io.Reader;
@@ -26,7 +27,8 @@ public class ClassificationList
      */
     public ClassificationList()
     {
-
+        // Create the list
+        list = new ArrayList<Classification>();
     }
 
     /**
