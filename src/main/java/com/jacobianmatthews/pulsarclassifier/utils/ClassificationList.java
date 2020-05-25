@@ -28,7 +28,7 @@ public class ClassificationList
     public ClassificationList()
     {
         // Create the list
-        list = new ArrayList<Classification>();
+        this.list = new ArrayList<Classification>();
     }
 
     /**
