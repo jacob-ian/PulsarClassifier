@@ -84,30 +84,30 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                 // Create a list containing the postitive classifications and a count of their occurrences
                 ClassificationList positiveList = new ClassificationList();
 
+                // Create a list containing the postitive classifications and a count of their occurrences
+                ClassificationList negativeList = new ClassificationList();
+
                 // Build the list of positive classifications using the outputs from all the classifiers
                 if( positiveList.buildList(positiveFiles) ){
 
                     // We now have a list of positive candidate classifications and we can apply
                     // the cutoff of 3 separate positive classifications for the ensemble classifier.
-                    
+
                     // Loop through the list of positive classifications
-                    for(Classification positive: positiveList.list)
+                    for( Classification positive: positiveList.getList() )
                     {
                         // Check the classification key-value pair for a value >=3
-                        if( positive.getValue() >= 3 )
+                        if( positive.getValue() > 2 )
                         {
                             // Try add it to the ensemble positive output file
-                            if ( !Writer.append(ensemblePositive, positive.getKey()) )
+                            if ( !Writer.append(ensemblePositive, positive.getKey()+"\n") )
                             {
                                 log.sout("Couldn't add "+positive.getKey()+" to positive ensemble classifier output file.", true);
                             }
                         } else {
 
-                            // Add it to the negative output file as it didn't survive the cutoff
-                            if( !Writer.append(ensembleNegative, positive.getKey()) )
-                            {
-                                log.sout("Couldn't add "+positive.getKey()+" to negative ensemble classifier output file.", true);
-                            }
+                            // Add it to the negative classification list as it didn't survive the cutoff
+                            negativeList.add(positive.getKey(), positive.getValue());
                         }
                         
                     }
@@ -121,20 +121,17 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                     return false;
                 }
 
-                // Create a list of the negative classifications
-                ClassificationList negativeList = new ClassificationList();
-
                 // Build a list of negative classifications from all classifiers
                 if ( negativeList.buildList(negativeFiles) )
                 {
                     // Loop through the list to produce the negative output file
-                    for (Classification negative: negativeList.list )
+                    for (Classification negative: negativeList.getList() )
                     {
                         // Get the key of the classification
                         String key = negative.getKey();
 
                         // Append it to the output file
-                        if( !Writer.append(ensembleNegative, key) )
+                        if( !Writer.append(ensembleNegative, key+"\n") )
                         {
                             // Log the error 
                             log.sout("Couldn't add "+key+" to the negative ensemble classifier output file.", true);

@@ -42,6 +42,11 @@ public class ClassificationList
         return list.get(index);
     }
 
+    public List<Classification> getList()
+    {
+        return this.list;
+    }
+
     /**
      * 
      * @return the number of items in the list
@@ -69,7 +74,7 @@ public class ClassificationList
     {
 
         // Loop through the list until the pair is found
-        for(Classification item: list)
+        for(Classification item: this.list)
         {
             // Check the string against the provided string
             if( item.getKey().equals(key) )
@@ -91,7 +96,7 @@ public class ClassificationList
     public void setValueByKey(String key, int value)
     {
         // Loop through the list until the key-value pair is found
-        for(Classification item: list)
+        for(Classification item: this.list)
         {
             // Compare the string keys
             if ( item.getKey().equals(key) )
@@ -123,26 +128,26 @@ public class ClassificationList
                 String line = Reader.readLine(file, i);
 
                 // Check if ensemble candidates list is empty
-                if ( size() == 0 ){
+                if ( this.size() == 0 ){
 
                     // List is empty, no point in checking for previous ocurrences of this line
-                    add(line, 1);
+                    this.add(line, 1);
 
                 } else {
 
                     // List isn't empty, check if this classification is already in the list
-                    int occurrences = getValueByKey(line);
+                    int occurrences = this.getValueByKey(line);
 
                     // If it isn't 0, then it has already showed up and therefore we can add to its total count
                     if (occurrences > 0) {
 
                         // Add to the value
-                        setValueByKey(line, occurrences++);
+                        this.setValueByKey(line, occurrences+1);
 
                     } else {
 
                         // Occurrences are 0, therefore we can add this key-value pair to the list
-                        add(line, 1);
+                        this.add(line, 1);
 
                     }
                 }
@@ -152,5 +157,30 @@ public class ClassificationList
         return true;
 
     }
+
+    /**
+     * 
+     * @return a string containing lines of all key value classification pairs
+     */
+    public String printList()
+        {
+            // Create an empty string to print to the command line
+            String output = "";
+
+            // Loop through the list items and print their key and value
+            for(Classification item: this.list)
+            {  
+                // Get the key and value of the classification
+                String key = item.getKey();
+                int value = item.getValue();
+
+                // Add to the output string
+                output+=key+", "+value+"\n";
+            }
+
+            // Return the output string
+            return output;
+
+        }
 
 }
