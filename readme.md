@@ -8,13 +8,17 @@ The intention of this software is:
 
 ## Requirements
 * Java 1.6 or later
-* Feature extraced candidate data produced with [PulsarFeatureLab](https://github.com/scienceguyrob/PulsarFeatureLab).
+* Feature extracted candidate data produced with [PulsarFeatureLab](https://github.com/scienceguyrob/PulsarFeatureLab).
 
 ## Usage
 
 ### Step 1:
+*Option A:*
 * Download this software by runnning: `git clone https://github.com/jacob-ian/PulsarClassifier.git`
 * Navigate to the `target` directory: `cd PulsarClassifier/target`.
+
+*Option B:*
+* Download the `pulsarclassifier-v1.0-jar-with-dependencies.jar` file from the `target` directory in this repository.
 
 ### Step 2 - *Train the Ensemble Classifier*:
 * Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from known pulsar and non-pulsar candidates. **NOTE:** Ensure that the feature type extracted is consistent across the training dataset and the data to be classified otherwise the machine learning classifier will not work.
