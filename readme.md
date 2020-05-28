@@ -28,7 +28,7 @@ The intention of this software is:
 $ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -t [PATH TO TRAINING DATASET ARFF FILE] -m [DIRECTORY TO STORE CLASSIFIER MODELS]
 ```
 ### Step 3 - *Validate the Ensemble Classifier*:
-* Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from another set of  known pulsar and non-pulsar candidates. Do not edit the appended `?` character on the outputted file.
+* Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from another set of  known pulsar and non-pulsar candidates. Do not edit the outputted file.
 * Run the command:
 ```
 $ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -v [PATH TO VALIDATION DATASET ARFF FILE] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
