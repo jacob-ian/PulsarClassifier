@@ -39,7 +39,7 @@ $ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -v [PATH TO VALIDATI
 * Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from your set of pulsar candidates. Do not edit the outputted file.
 * Run the command:
 ```
-$ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar` -p [PATH TO DATASET ARFF FILE TO CLASSIFY] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
+$ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -p [PATH TO DATASET ARFF FILE TO CLASSIFY] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
 ```
 
 ## Output
