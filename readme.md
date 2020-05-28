@@ -18,20 +18,20 @@ The intention of this software is:
 * Navigate to the `target` directory: `cd PulsarClassifier/target`.
 
 *Option B:*
-* Download the `pulsarclassifier-v1.0-jar-with-dependencies.jar` file from the `target` directory in this repository.
+* Download the `pulsarclassifier-1.0-jar-with-dependencies.jar` file from the `target` directory in this repository.
 
 ### Step 2 - *Train the Ensemble Classifier*:
 * Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from known pulsar and non-pulsar candidates. **NOTE:** Ensure that the feature type extracted is consistent across the training dataset and the data to be classified otherwise the machine learning classifier will not work.
 * Edit the outputted file to remove the appended `?` character from each line and replace them with a `1` if the candidate is a pulsar, or a `0` if it a non-pulsar.
 * Run the command:
 ```
-$ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -t [PATH TO TRAINING DATASET ARFF FILE] -m [DIRECTORY TO STORE CLASSIFIER MODELS]
+$ java -jar pulsarclassifier-1.0-jar-with-dependencies.jar -t [PATH TO TRAINING DATASET ARFF FILE] -m [DIRECTORY TO STORE CLASSIFIER MODELS]
 ```
 ### Step 3 - *Validate the Ensemble Classifier*:
 * Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from another set of  known pulsar and non-pulsar candidates. Do not edit the outputted file.
 * Run the command:
 ```
-$ java -jar pulsarclassifier-v1.0-jar-with-dependencies.jar -v [PATH TO VALIDATION DATASET ARFF FILE] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
+$ java -jar pulsarclassifier-1.0-jar-with-dependencies.jar -v [PATH TO VALIDATION DATASET ARFF FILE] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
 ```
 * Compare the created `[output]_ensemble.positive` and `[output]_ensemble.negative` files with the known pulsars to evaluate the performance of the classifier.
 
