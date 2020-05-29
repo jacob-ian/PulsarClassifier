@@ -35,7 +35,7 @@ $ java -jar pulsarclassifier-1.0-full.jar -t [PATH TO TRAINING DATASET ARFF FILE
 $ java -jar pulsarclassifier-v1.0-full.jar -p [PATH TO DATASET ARFF FILE TO CLASSIFY] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
 ```
 
-### Optional Step - *Testing and Validation*:
+### (Optional) Step 4 - *Testing and Validation*:
 * Use [PulsarValidator](https://github.com/jacob-ian/PulsarValidator.git) to compare the list of pulsars in the testing/validation dataset with the output of the classifier.
 
 ## Output
