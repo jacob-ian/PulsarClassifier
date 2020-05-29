@@ -37,27 +37,28 @@
       <plugins>
         <!-- Create a JAR containing the resources and dependencies -->
         <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <configuration>
-            <archive>
-                <manifest>
-                    <addClasspath>true</addClasspath>
-                    <mainClass>com.jacobianmatthews.pulsarclassifier.PulsarClassifier</mainClass>
-                </manifest>
-            </archive>
-            <descriptorRefs>
-              <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>
-          </configuration>
-          <executions>
+            <configuration>
+              <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+              </descriptorRefs>
+              <finalName>${project.artifactId}-${project.version}-full</finalName>
+              <appendAssemblyId>false</appendAssemblyId>
+              <archive>
+                  <manifest>
+                      <mainClass>com.jacobianmatthews.pulsarclassifier.PulsarClassifier</mainClass>
+                  </manifest>
+              </archive>
+            </configuration>
+            <executions>
               <execution>
+                <id>make-my-jar-with-dependenciess</id>
                 <phase>package</phase>
                 <goals>
-                  <goal>single</goal>
+                    <goal>single</goal>
                 </goals>
               </execution>
-          </executions>
+            </executions>
         </plugin>
       </plugins>
     </pluginManagement>
