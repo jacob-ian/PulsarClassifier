@@ -27,20 +27,16 @@ The intention of this software is:
 ```
 $ java -jar pulsarclassifier-1.0-full.jar -t [PATH TO TRAINING DATASET ARFF FILE] -m [DIRECTORY TO STORE CLASSIFIER MODELS]
 ```
-### Step 3 - *Validate the Ensemble Classifier*:
-* Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from another set of  known pulsar and non-pulsar candidates. Do not edit the outputted file.
-* Run the command:
-```
-$ java -jar pulsarclassifier-1.0-full.jar -v [PATH TO VALIDATION DATASET ARFF FILE] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
-```
-* Compare the created `[output]_ensemble.positive` and `[output]_ensemble.negative` files with the known pulsars to evaluate the performance of the classifier.
 
-### Step 4 - *Make Predictions with the Ensemble Classifier*:
+### Step 3 - *Make Predictions with the Ensemble Classifier*:
 * Use `PulsarFeatureLab` with the appended flags `--arff --meta` to extract the machine learning features from your set of pulsar candidates. Do not edit the outputted file.
 * Run the command:
 ```
 $ java -jar pulsarclassifier-v1.0-full.jar -p [PATH TO DATASET ARFF FILE TO CLASSIFY] -m [DIRECTORY OF STORED CLASSIFIER MODELS]
 ```
+
+### Optional Step - *Testing and Validation*:
+* Use [PulsarValidator](https://github.com/jacob-ian/PulsarValidator.git) to compare the list of pulsars in the testing/validation dataset with the output of the classifier.
 
 ## Output
 PulsarClassifier will output 10 files in the same directory as the inputted `[output].arff` file. There are two files: a `[ouput]_[classifier].positive` file and an `[output]_[classifier].negative` file for each machine learning classifier, with the `.positive` file containing classified pulsars and the `.negative` file containing classified non-pulsars.
