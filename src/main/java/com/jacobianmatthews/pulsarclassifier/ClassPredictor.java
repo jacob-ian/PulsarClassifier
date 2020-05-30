@@ -10,6 +10,7 @@ import com.scienceguyrob.lotaasclassifier.classifiers.offline.J48Tester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.MLPTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.NaiveBayesTester;
 import com.scienceguyrob.lotaasclassifier.classifiers.offline.SVMTester;
+import com.scienceguyrob.lotaasclassifier.io.Reader;
 import com.scienceguyrob.lotaasclassifier.io.Writer;
 import com.scienceguyrob.lotaasclassifier.utils.BasicLogger;
 import com.scienceguyrob.lotaasclassifier.wekawrappers.I_WekaTest;
@@ -107,7 +108,7 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                         } else {
 
                             // Add it to the negative classification list as it didn't survive the cutoff
-                            negativeList.add(positive.getKey(), positive.getValue());
+                            negativeList.add(positive.getKey(), 1);
                         }
                         
                     }
@@ -130,13 +131,19 @@ public class ClassPredictor extends com.scienceguyrob.lotaasclassifier.mvc.Class
                         // Get the key of the classification
                         String key = negative.getKey();
 
-                        // Append it to the output file
-                        if( !Writer.append(ensembleNegative, key+"\n") )
+                        // Make sure that it isn't already in the positive or negative output files
+                        if( !Reader.checkStringIsInFile(ensembleNegative, key) && !Reader.checkStringIsInFile(ensemblePositive, key))
                         {
-                            // Log the error 
-                            log.sout("Couldn't add "+key+" to the negative ensemble classifier output file.", true);
+                            // Append it to the output file
+                            if( !Writer.append(ensembleNegative, key+"\n") )
+                            {
+                                // Log the error 
+                                log.sout("Couldn't add "+key+" to the negative ensemble classifier output file.", true);
+
+                            }
 
                         }
+                        
                     }
 
                     // Flag that the process was successful

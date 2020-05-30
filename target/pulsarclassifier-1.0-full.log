@@ -1,3 +1,198 @@
 INFO,29/05/2020,18:0:12.893,1590746412893,Welcome to PULSAR CLASSIFIER 1.0
 INFO,29/05/2020,18:0:12.903,1590746412903,Unable to train classifier model/make predictions - inputs invalid
 INFO,29/05/2020,18:0:12.904,1590746412904,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:3:27.872,1590822207872,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:3:27.883,1590822207883,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:3:27.932,1590822207932,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:3:27.969,1590822207969,The J48 classifier is ready.
+INFO,30/05/2020,15:3:27.970,1590822207970,The J48 classify will process all instances available.
+INFO,30/05/2020,15:3:27.970,1590822207970,Total examples to be classified: 234
+INFO,30/05/2020,15:3:27.971,1590822207971,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:3:27.985,1590822207985,Classification using J48 completed in 13493547 (ns) or 0.013493547 (s)
+INFO,30/05/2020,15:3:27.985,1590822207985,Predicted positive: 146 predicted negative 88
+INFO,30/05/2020,15:3:28.31,1590822208031,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:3:28.44,1590822208044,The MLP classifier is ready.
+INFO,30/05/2020,15:3:28.45,1590822208045,The MLP classify will process all instances available.
+INFO,30/05/2020,15:3:28.46,1590822208046,Total examples to be classified: 234
+INFO,30/05/2020,15:3:28.46,1590822208046,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:3:28.67,1590822208067,Classification using MLP completed in 20644795 (ns) or 0.020644795 (s)
+INFO,30/05/2020,15:3:28.68,1590822208068,Predicted positive: 125 predicted negative 109
+INFO,30/05/2020,15:3:28.82,1590822208082,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:3:28.94,1590822208094,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:3:28.95,1590822208095,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:3:28.95,1590822208095,Total examples to be classified: 234
+INFO,30/05/2020,15:3:28.96,1590822208096,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:3:28.119,1590822208119,Classification using NaiveBayes completed in 23378491 (ns) or 0.023378491 (s)
+INFO,30/05/2020,15:3:28.120,1590822208120,Predicted positive: 119 predicted negative 115
+INFO,30/05/2020,15:3:28.147,1590822208147,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:3:28.160,1590822208160,The SVM classifier is ready.
+INFO,30/05/2020,15:3:28.161,1590822208161,The SVM classify will process all instances available.
+INFO,30/05/2020,15:3:28.161,1590822208161,Total examples to be classified: 234
+INFO,30/05/2020,15:3:28.161,1590822208161,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:3:28.170,1590822208170,Classification using SVM completed in 8500848 (ns) or 0.008500848 (s)
+INFO,30/05/2020,15:3:28.170,1590822208170,Predicted positive: 97 predicted negative 137
+INFO,30/05/2020,15:3:28.280,1590822208280,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:3:28.280,1590822208280,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:19:23.876,1590823163876,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:19:23.886,1590823163887,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:19:23.936,1590823163936,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:19:23.977,1590823163977,The J48 classifier is ready.
+INFO,30/05/2020,15:19:23.978,1590823163978,The J48 classify will process all instances available.
+INFO,30/05/2020,15:19:23.978,1590823163978,Total examples to be classified: 234
+INFO,30/05/2020,15:19:23.979,1590823163979,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:19:23.993,1590823163993,Classification using J48 completed in 14192337 (ns) or 0.014192337 (s)
+INFO,30/05/2020,15:19:23.994,1590823163994,Predicted positive: 146 predicted negative 88
+INFO,30/05/2020,15:19:24.45,1590823164045,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:19:24.58,1590823164058,The MLP classifier is ready.
+INFO,30/05/2020,15:19:24.59,1590823164059,The MLP classify will process all instances available.
+INFO,30/05/2020,15:19:24.59,1590823164059,Total examples to be classified: 234
+INFO,30/05/2020,15:19:24.60,1590823164060,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:19:24.80,1590823164080,Classification using MLP completed in 20242153 (ns) or 0.020242153 (s)
+INFO,30/05/2020,15:19:24.81,1590823164081,Predicted positive: 125 predicted negative 109
+INFO,30/05/2020,15:19:24.91,1590823164091,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:19:24.100,1590823164100,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:19:24.101,1590823164101,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:19:24.102,1590823164102,Total examples to be classified: 234
+INFO,30/05/2020,15:19:24.103,1590823164103,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:19:24.133,1590823164133,Classification using NaiveBayes completed in 29691423 (ns) or 0.029691423 (s)
+INFO,30/05/2020,15:19:24.133,1590823164133,Predicted positive: 119 predicted negative 115
+INFO,30/05/2020,15:19:24.168,1590823164168,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:19:24.188,1590823164188,The SVM classifier is ready.
+INFO,30/05/2020,15:19:24.189,1590823164189,The SVM classify will process all instances available.
+INFO,30/05/2020,15:19:24.189,1590823164189,Total examples to be classified: 234
+INFO,30/05/2020,15:19:24.190,1590823164190,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:19:24.208,1590823164209,Classification using SVM completed in 18498866 (ns) or 0.018498866 (s)
+INFO,30/05/2020,15:19:24.209,1590823164209,Predicted positive: 97 predicted negative 137
+INFO,30/05/2020,15:19:24.368,1590823164368,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:19:24.368,1590823164368,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:33:25.756,1590824005756,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:33:25.767,1590824005767,Unable to train classifier model/make predictions - inputs invalid
+INFO,30/05/2020,15:33:25.768,1590824005768,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:33:58.235,1590824038235,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:33:58.243,1590824038243,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:33:58.298,1590824038298,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:33:58.323,1590824038323,The J48 classifier is ready.
+INFO,30/05/2020,15:33:58.324,1590824038324,The J48 classify will process all instances available.
+INFO,30/05/2020,15:33:58.325,1590824038325,Total examples to be classified: 24
+INFO,30/05/2020,15:33:58.326,1590824038326,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:33:58.329,1590824038329,Classification using J48 completed in 3683621 (ns) or 0.003683621 (s)
+INFO,30/05/2020,15:33:58.330,1590824038330,Predicted positive: 11 predicted negative 13
+INFO,30/05/2020,15:33:58.374,1590824038374,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:33:58.379,1590824038379,The MLP classifier is ready.
+INFO,30/05/2020,15:33:58.380,1590824038380,The MLP classify will process all instances available.
+INFO,30/05/2020,15:33:58.380,1590824038380,Total examples to be classified: 24
+INFO,30/05/2020,15:33:58.381,1590824038381,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:33:58.385,1590824038385,Classification using MLP completed in 4502708 (ns) or 0.004502708 (s)
+INFO,30/05/2020,15:33:58.386,1590824038386,Predicted positive: 11 predicted negative 13
+INFO,30/05/2020,15:33:58.399,1590824038399,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:33:58.401,1590824038401,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:33:58.402,1590824038402,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:33:58.402,1590824038402,Total examples to be classified: 24
+INFO,30/05/2020,15:33:58.403,1590824038403,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:33:58.411,1590824038411,Classification using NaiveBayes completed in 7742773 (ns) or 0.007742773 (s)
+INFO,30/05/2020,15:33:58.411,1590824038411,Predicted positive: 10 predicted negative 14
+INFO,30/05/2020,15:33:58.434,1590824038434,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:33:58.436,1590824038436,The SVM classifier is ready.
+INFO,30/05/2020,15:33:58.437,1590824038437,The SVM classify will process all instances available.
+INFO,30/05/2020,15:33:58.438,1590824038438,Total examples to be classified: 24
+INFO,30/05/2020,15:33:58.439,1590824038439,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:33:58.444,1590824038444,Classification using SVM completed in 4961113 (ns) or 0.004961113 (s)
+INFO,30/05/2020,15:33:58.444,1590824038444,Predicted positive: 10 predicted negative 14
+INFO,30/05/2020,15:33:58.467,1590824038467,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:33:58.468,1590824038468,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:34:22.107,1590824062107,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:34:22.120,1590824062120,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:34:22.175,1590824062175,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:34:22.223,1590824062223,The J48 classifier is ready.
+INFO,30/05/2020,15:34:22.224,1590824062224,The J48 classify will process all instances available.
+INFO,30/05/2020,15:34:22.225,1590824062225,Total examples to be classified: 234
+INFO,30/05/2020,15:34:22.226,1590824062226,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:34:22.240,1590824062240,Classification using J48 completed in 14194020 (ns) or 0.01419402 (s)
+INFO,30/05/2020,15:34:22.241,1590824062241,Predicted positive: 146 predicted negative 88
+INFO,30/05/2020,15:34:22.286,1590824062286,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:34:22.308,1590824062308,The MLP classifier is ready.
+INFO,30/05/2020,15:34:22.309,1590824062309,The MLP classify will process all instances available.
+INFO,30/05/2020,15:34:22.309,1590824062309,Total examples to be classified: 234
+INFO,30/05/2020,15:34:22.310,1590824062310,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:34:22.329,1590824062330,Classification using MLP completed in 19744529 (ns) or 0.019744529 (s)
+INFO,30/05/2020,15:34:22.330,1590824062330,Predicted positive: 125 predicted negative 109
+INFO,30/05/2020,15:34:22.342,1590824062342,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:34:22.357,1590824062357,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:34:22.359,1590824062359,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:34:22.360,1590824062360,Total examples to be classified: 234
+INFO,30/05/2020,15:34:22.361,1590824062362,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:34:22.397,1590824062397,Classification using NaiveBayes completed in 35307087 (ns) or 0.035307087 (s)
+INFO,30/05/2020,15:34:22.398,1590824062398,Predicted positive: 119 predicted negative 115
+INFO,30/05/2020,15:34:22.427,1590824062427,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:34:22.452,1590824062452,The SVM classifier is ready.
+INFO,30/05/2020,15:34:22.452,1590824062452,The SVM classify will process all instances available.
+INFO,30/05/2020,15:34:22.453,1590824062453,Total examples to be classified: 234
+INFO,30/05/2020,15:34:22.454,1590824062455,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:34:22.467,1590824062467,Classification using SVM completed in 12313769 (ns) or 0.012313769 (s)
+INFO,30/05/2020,15:34:22.467,1590824062467,Predicted positive: 97 predicted negative 137
+INFO,30/05/2020,15:34:22.624,1590824062624,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:34:22.624,1590824062624,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:34:35.581,1590824075581,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:34:35.592,1590824075592,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:34:35.645,1590824075645,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:34:35.685,1590824075685,The J48 classifier is ready.
+INFO,30/05/2020,15:34:35.686,1590824075686,The J48 classify will process all instances available.
+INFO,30/05/2020,15:34:35.686,1590824075686,Total examples to be classified: 234
+INFO,30/05/2020,15:34:35.687,1590824075687,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:34:35.700,1590824075700,Classification using J48 completed in 12395747 (ns) or 0.012395747 (s)
+INFO,30/05/2020,15:34:35.700,1590824075700,Predicted positive: 146 predicted negative 88
+INFO,30/05/2020,15:34:35.749,1590824075749,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:34:35.771,1590824075771,The MLP classifier is ready.
+INFO,30/05/2020,15:34:35.772,1590824075772,The MLP classify will process all instances available.
+INFO,30/05/2020,15:34:35.772,1590824075772,Total examples to be classified: 234
+INFO,30/05/2020,15:34:35.773,1590824075773,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:34:35.788,1590824075788,Classification using MLP completed in 15313630 (ns) or 0.01531363 (s)
+INFO,30/05/2020,15:34:35.789,1590824075789,Predicted positive: 125 predicted negative 109
+INFO,30/05/2020,15:34:35.802,1590824075802,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:34:35.819,1590824075819,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:34:35.821,1590824075821,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:34:35.822,1590824075822,Total examples to be classified: 234
+INFO,30/05/2020,15:34:35.824,1590824075824,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:34:35.851,1590824075851,Classification using NaiveBayes completed in 27062109 (ns) or 0.027062109 (s)
+INFO,30/05/2020,15:34:35.853,1590824075853,Predicted positive: 119 predicted negative 115
+INFO,30/05/2020,15:34:35.894,1590824075894,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:34:35.915,1590824075915,The SVM classifier is ready.
+INFO,30/05/2020,15:34:35.915,1590824075915,The SVM classify will process all instances available.
+INFO,30/05/2020,15:34:35.916,1590824075916,Total examples to be classified: 234
+INFO,30/05/2020,15:34:35.916,1590824075917,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:34:35.924,1590824075924,Classification using SVM completed in 7438847 (ns) or 0.007438847 (s)
+INFO,30/05/2020,15:34:35.924,1590824075924,Predicted positive: 97 predicted negative 137
+INFO,30/05/2020,15:34:36.61,1590824076061,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:34:36.61,1590824076061,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,30/05/2020,15:52:50.506,1590825170506,Welcome to PULSAR CLASSIFIER 1.0
+INFO,30/05/2020,15:52:50.516,1590825170516,Attempting to apply predictions using existing classifier
+INFO,30/05/2020,15:52:50.570,1590825170570,Attempting to classify data using the J48 classifier
+INFO,30/05/2020,15:52:50.609,1590825170609,The J48 classifier is ready.
+INFO,30/05/2020,15:52:50.610,1590825170610,The J48 classify will process all instances available.
+INFO,30/05/2020,15:52:50.611,1590825170611,Total examples to be classified: 234
+INFO,30/05/2020,15:52:50.613,1590825170613,The J48 model is classifying instance: 0
+INFO,30/05/2020,15:52:50.629,1590825170629,Classification using J48 completed in 16769206 (ns) or 0.016769206 (s)
+INFO,30/05/2020,15:52:50.630,1590825170630,Predicted positive: 146 predicted negative 88
+INFO,30/05/2020,15:52:50.683,1590825170683,Attempting to classify data using the MLP classifier
+INFO,30/05/2020,15:52:50.709,1590825170709,The MLP classifier is ready.
+INFO,30/05/2020,15:52:50.710,1590825170710,The MLP classify will process all instances available.
+INFO,30/05/2020,15:52:50.711,1590825170711,Total examples to be classified: 234
+INFO,30/05/2020,15:52:50.712,1590825170712,The MLP model is classifying instance: 0
+INFO,30/05/2020,15:52:50.736,1590825170736,Classification using MLP completed in 24613326 (ns) or 0.024613326 (s)
+INFO,30/05/2020,15:52:50.737,1590825170737,Predicted positive: 125 predicted negative 109
+INFO,30/05/2020,15:52:50.750,1590825170750,Attempting to classify data using the NaiveBayes classifier
+INFO,30/05/2020,15:52:50.763,1590825170763,The NaiveBayes classifier is ready.
+INFO,30/05/2020,15:52:50.764,1590825170764,The NaiveBayes classify will process all instances available.
+INFO,30/05/2020,15:52:50.765,1590825170765,Total examples to be classified: 234
+INFO,30/05/2020,15:52:50.766,1590825170766,The NaiveBayes model is classifying instance: 0
+INFO,30/05/2020,15:52:50.790,1590825170790,Classification using NaiveBayes completed in 23541963 (ns) or 0.023541963 (s)
+INFO,30/05/2020,15:52:50.790,1590825170790,Predicted positive: 119 predicted negative 115
+INFO,30/05/2020,15:52:50.827,1590825170827,Attempting to classify data using the SVM classifier
+INFO,30/05/2020,15:52:50.850,1590825170850,The SVM classifier is ready.
+INFO,30/05/2020,15:52:50.853,1590825170853,The SVM classify will process all instances available.
+INFO,30/05/2020,15:52:50.854,1590825170854,Total examples to be classified: 234
+INFO,30/05/2020,15:52:50.855,1590825170855,The SVM model is classifying instance: 0
+INFO,30/05/2020,15:52:50.873,1590825170873,Classification using SVM completed in 18823556 (ns) or 0.018823556 (s)
+INFO,30/05/2020,15:52:50.874,1590825170874,Predicted positive: 97 predicted negative 137
+INFO,30/05/2020,15:52:51.91,1590825171091,Ensemble classifier made predictions successfully.
+INFO,30/05/2020,15:52:51.91,1590825171091,Exiting PULSAR CLASSIFIER 1.0 correctly

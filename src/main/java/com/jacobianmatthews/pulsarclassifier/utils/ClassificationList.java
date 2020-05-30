@@ -58,6 +58,11 @@ public class ClassificationList
     }
 
    
+    /**
+     * Add a classification to the list
+     * @param key Path to the candidate
+     * @param value Number of times it has been classified as a result
+     */
     public void add(String key, int value)
     {
         // Create a new entry and add it to the list
@@ -139,16 +144,17 @@ public class ClassificationList
                     int occurrences = this.getValueByKey(line);
 
                     // If it isn't 0, then it has already showed up and therefore we can add to its total count
-                    if (occurrences > 0) {
-
-                        // Add to the value
-                        this.setValueByKey(line, occurrences+1);
-
-                    } else {
+                    if (occurrences == 0) {
 
                         // Occurrences are 0, therefore we can add this key-value pair to the list
                         this.add(line, 1);
 
+                    
+                    } else {
+
+                        // Add to the value
+                        this.setValueByKey(line, occurrences+1);
+                       
                     }
                 }
             }
