@@ -15,7 +15,7 @@ The intention of this software is:
 ### Step 1 - *Download*:
 *Option A:*
 * Download this software by runnning: `git clone https://github.com/jacob-ian/PulsarClassifier.git`
-* Navigate to the `target` directory: `cd PulsarClassifier/target`.
+* Navigate to the `target` directory.
 
 *Option B:*
 * Download the `pulsarclassifier-1.0-full.jar` file from the `target` directory in this repository.
