@@ -39,7 +39,7 @@ $ java -jar pulsarclassifier-v1.0-full.jar -p [PATH TO DATASET ARFF FILE TO CLAS
 * Use [PulsarValidator](https://github.com/jacob-ian/PulsarValidator.git) to compare the list of pulsars in the testing/validation dataset with the output of the classifier.
 
 ## Output
-PulsarClassifier will output 10 files in the same directory as the inputted `[output].arff` file. There are two files: a `[ouput]_[classifier].positive` file and an `[output]_[classifier].negative` file for each machine learning classifier, with the `.positive` file containing classified pulsars and the `.negative` file containing classified non-pulsars.
+PulsarClassifier will output 10 files in the same directory as the inputted `[output].arff` file. There are two files: a `[output]_[classifier].positive` file and an `[output]_[classifier].negative` file for each machine learning classifier, with the `.positive` file containing classified pulsars and the `.negative` file containing classified non-pulsars.
 
 The ensemble classifier checks the result of the 4 machine learning classifiers and if a candidate is classified as a pulsar by 3 separate classifiers, it is classified as a pulsar by the ensemble classifier.
 
