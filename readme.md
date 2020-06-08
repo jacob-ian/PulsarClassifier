@@ -12,7 +12,7 @@ The intention of this software is:
 
 ## Usage
 
-### Step 1:
+### Step 1 - *Download*:
 *Option A:*
 * Download this software by runnning: `git clone https://github.com/jacob-ian/PulsarClassifier.git`
 * Navigate to the `target` directory: `cd PulsarClassifier/target`.
