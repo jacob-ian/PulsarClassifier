@@ -196,3 +196,9 @@ INFO,30/05/2020,15:52:50.873,1590825170873,Classification using SVM completed in
 INFO,30/05/2020,15:52:50.874,1590825170874,Predicted positive: 97 predicted negative 137
 INFO,30/05/2020,15:52:51.91,1590825171091,Ensemble classifier made predictions successfully.
 INFO,30/05/2020,15:52:51.91,1590825171091,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,19/06/2020,15:51:50.22,1592553110022,Welcome to PULSAR CLASSIFIER 1.0
+INFO,19/06/2020,15:51:50.29,1592553110029,Unable to train classifier model/make predictions - inputs invalid
+INFO,19/06/2020,15:51:50.30,1592553110030,Exiting PULSAR CLASSIFIER 1.0 correctly
+INFO,19/06/2020,16:13:53.75,1592554433075,Welcome to PULSAR CLASSIFIER 1.0
+INFO,19/06/2020,16:13:53.84,1592554433084,Unable to train classifier model/make predictions - inputs invalid
+INFO,19/06/2020,16:13:53.85,1592554433085,Exiting PULSAR CLASSIFIER 1.0 correctly

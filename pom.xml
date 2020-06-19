@@ -9,13 +9,12 @@
   <version>1.0</version>
 
   <name>PulsarClassifier</name>
-  <!-- FIXME change it to the project's website -->
   <url>https://github.com/jacob-ian/PulsarClassifier</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8.0</maven.compiler.source>
+    <maven.compiler.target>1.8.0</maven.compiler.target>
   </properties>
 
   <dependencies>
